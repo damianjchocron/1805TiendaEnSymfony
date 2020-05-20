@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="row mt-5 pl-5">
+		<div class="col-6">
+			<form class="mb-5" action="/categoria/guardar" method="post">
+				<div class="form-group">
+					<label for="textTitulo">Titulo</label>
+					<input type="text" class="form-control" name="nombre" aria-describedby="nombre" placeholder="Nombre" value="{{categoria.nombre}}">
+				</div>
+				<input type="hidden" name="id" value="{{categoria.idcategoria}}">
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+            {% if mensaje%}
+            <span>{{mensaje}}</span>
+            {% endif %}
+			{{dump(categoria)}}
+		</div>
+	</div>
+{% endblock %}
